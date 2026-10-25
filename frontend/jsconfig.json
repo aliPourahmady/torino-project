@@ -1,7 +1,24 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/public/*": ["public/*"],
+      "@/app/*": ["src/app/*"],
+      "@/api/*": ["./src/app/api/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/store/*": ["./src/store/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/validations/*": ["./src/validations/*"],
+      "@/ui/*": ["./src/components/ui/*"],
+      "@/auth/*": ["./src/components/auth/*"],
+      "@/checkout/*": ["./src/components/checkout/*"],
+      "@/home/*": ["./src/components/home/*"],
+      "@/layout/*": ["./src/components/layout/*"],
+      "@/profile/*": ["./src/components/profile/*"],
+      "@/providers/*": ["./src/components/providers/*"],
+      "@/tours/*": ["./src/components/tours/*"]
     }
   }
 }
