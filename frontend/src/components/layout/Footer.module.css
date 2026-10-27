@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 126px;
+  align-items: center;
+}
+.list {
+  display: flex;
+  align-items: center;
+  gap: 126px;
+  color: var(--text-color);
+}
+.lsit ul {
+  margin: 0;
+  padding: 0;
+}
+
+.list li:first-child {
+  font-weight: 500;
+  font-size: 24px;
+  padding-bottom: 16px;
+}
+
+.list li {
+  list-style-type: none;
+  padding: 4px 8px;
+  transition: all 0.2s ease-in-out;
+}
+.list li:not(:first-child):hover {
+  color: var(--primary);
+}
+
+.mark {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  gap: 36px;
+  font-size: 15px;
+}
+.markLogo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.markImage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.line {
+  margin: 0 126px;
+}
+.watermark {
+  text-align: center;
+  font-size: 15px;
+  padding-top: 12px;
+}
