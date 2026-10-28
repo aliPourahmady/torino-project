@@ -1,0 +1,128 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.49);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 59px 30px 40px 40px;
+  justify-content: space-between;
+  position: relative;
+}
+.container img {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.container img:hover {
+  transform: scale(1.1);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    font-weight: 300;
+    font-size: 28px;
+  }
+  p {
+    font-weight: 300;
+    font-size: 16px;
+  }
+  margin-bottom: 18px;
+}
+.slots {
+  display: flex;
+  gap: 12px;
+}
+
+.slot {
+  width: 58px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  font-size: 20px;
+  color: var(--text-color);
+  background-color: #fff;
+}
+
+.active {
+  border: 2px solid var(--primary);
+}
+.timer {
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.timer span {
+  font-weight: 300;
+  font-weight: 12px;
+  color: var(--text-color);
+  margin-inline-end: 4px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.caret {
+  width: 1px;
+  height: 24px;
+  background-color: var(--text-color);
+  animation: blink 1s steps(1) infinite;
+}
+.resend {
+  border: none;
+  background-color: var(--primary);
+  border-radius: 6px;
+  padding: 0 8px;
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.btn {
+  margin-top: 27px;
+  width: 491px;
+  height: 54px;
+  padding-inline: 8px;
+  border-radius: 6px;
+  background-color: var(--primary);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

@@ -3,6 +3,7 @@
   --secondary: #10411b;
   --complementry: #009eca;
   --text-color: #282828;
+  --error: #dc3545;
 }
 * {
   box-sizing: border-box;

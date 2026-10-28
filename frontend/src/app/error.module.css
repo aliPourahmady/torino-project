@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-left: 153px;
+  margin-bottom: 150px;
+  h3 {
+    font-weight: 500;
+    font-size: 36px;
+    color: var(--text-color);
+  }
+  p {
+    font-weight: 300;
+    font-size: 24px;
+    color: var(--text-color);
+  }
+}

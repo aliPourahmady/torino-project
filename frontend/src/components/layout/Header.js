@@ -1,8 +1,16 @@
+"use client";
 import Image from "next/image";
 import styles from "./Header.module.css";
 import Link from "next/link";
+import SendOtpModal from "@/auth/SendOtpModal";
+import { useDispatch } from "react-redux";
+import { openModal } from "@/store/features/auth/authSlice";
+import { useProfile } from "@/hooks/useProfile";
+import { digitsEnToFa } from "@persian-tools/persian-tools";
 
 function Header() {
+  const dispatch = useDispatch();
+  const { data: profile, isLoading } = useProfile();
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -12,6 +20,7 @@ function Header() {
             alt="Logo"
             width={146}
             height={44}
+            loading="eager"
           />
           <ul>
             <li>
@@ -28,13 +37,38 @@ function Header() {
             </li>
           </ul>
         </div>
-        <button>
-          {" "}
-          <Image src="images/profile green.svg" width={24} height={24} />
-          ورود
-          <span>|</span>
-          ثبت نام
-        </button>
+        {isLoading ? (
+          <div className={styles.skeleton} />
+        ) : profile ? (
+          <div className={styles.user}>
+            <Image
+              src="images/profile green.svg"
+              width={24}
+              height={24}
+              alt="profile"
+            />
+            {digitsEnToFa(profile.mobile)}
+            <Image
+              src="images/arrow-down.svg"
+              width={24}
+              height={24}
+              alt="arrow-down"
+            />
+          </div>
+        ) : (
+          <button onClick={() => dispatch(openModal())}>
+            {" "}
+            <Image
+              src="images/profile green.svg"
+              width={24}
+              height={24}
+              alt="profile"
+            />
+            ورود
+            <span>|</span>
+            ثبت نام
+          </button>
+        )}
       </div>
     </header>
   );
