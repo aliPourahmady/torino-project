@@ -1,30 +1,33 @@
+.line {
+  margin: 0 30px 20px;
+  border: 0;
+  border-top: 1px dashed rgba(0, 0, 0, 0.25);
+}
+
 .container {
   display: flex;
-  justify-content: space-between;
-  margin: 0 126px;
-  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 30px 16px;
 }
+
 .list {
   display: flex;
-  align-items: center;
-  gap: 126px;
+  justify-content: space-between;
+  gap: 24;
   color: var(--text-color);
 }
-.lsit ul {
-  margin: 0;
-  padding: 0;
-}
-
-.list li:first-child {
-  font-weight: 500;
-  font-size: 24px;
-  padding-bottom: 16px;
-}
-
 .list li {
   list-style-type: none;
-  padding: 4px 8px;
+  padding: 3px 0;
+  font-size: 13px;
+  line-height: 20px;
   transition: all 0.2s ease-in-out;
+}
+.list li:first-child {
+  font-weight: 500;
+  font-size: 16px;
+  padding-bottom: 10px;
 }
 .list li:not(:first-child):hover {
   color: var(--primary);
@@ -32,29 +35,114 @@
 
 .mark {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: end;
-  gap: 36px;
-  font-size: 15px;
+  align-items: center;
 }
 .markLogo {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  font-size: 11px;
 }
-.markImage {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 32px;
+.markLogo p {
+  font-size: 12px;
+  font-weight: 500;
+}
+.markLogo img {
+  width: 84px;
+  height: auto;
 }
 
-.line {
-  margin: 0 126px;
+.markImage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: 104px;
+}
+.markImage img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.markImage img:nth-child(-n + 2) {
+  order: 1;
+}
+
+.divider {
+  margin: 0 30px;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
 .watermark {
   text-align: center;
-  font-size: 15px;
-  padding-top: 12px;
+  font-size: 11px;
+  padding: 10px 16px;
+}
+
+@media (min-width: 768px) {
+  .line {
+    margin: 0 clamp(24px, 8vw, 126px);
+    border-top-style: solid;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    margin: 0 clamp(24px, 8vw, 126px);
+  }
+
+  .list {
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(48px, 10vw, 126px);
+  }
+  .list li {
+    padding: 4px 8px;
+    font-size: 1rem;
+    line-height: normal;
+  }
+  .list li:first-child {
+    font-size: 24px;
+    padding-bottom: 16px;
+  }
+
+  .mark {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: end;
+    gap: 36px;
+  }
+  .markLogo {
+    gap: 20px;
+    font-size: 15px;
+  }
+  .markLogo img {
+    width: 146px;
+  }
+
+  .markImage {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 32px;
+    width: auto;
+  }
+  .markImage img {
+    width: 78px;
+    height: 74px;
+  }
+  .markImage img:nth-child(-n + 2) {
+    order: 0;
+  }
+
+  .divider {
+    margin: 0;
+  }
+  .watermark {
+    font-size: 15px;
+    padding: 12px 0 0;
+  }
 }

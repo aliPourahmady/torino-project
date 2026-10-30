@@ -50,7 +50,7 @@ function SendOtpModal() {
           onClick={() => dispatch(closeModal())}
           alt="close"
         />
-        <p>ورود به تورینو</p>
+        <h1>ورود به تورینو</h1>
         <form
           className={styles.containerForm}
           onSubmit={handleSubmit(onSubmit)}

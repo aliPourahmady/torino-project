@@ -1,0 +1,63 @@
+.burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.drawer {
+  animation: 0.5s drawer;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: min(209px, calc(100% - 24px));
+  padding: 32px 12px;
+  border-radius: 12px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+.drawer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  list-style: none;
+}
+.drawer a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+.drawer a:hover {
+  color: var(--primary);
+}
+
+@media (min-width: 1024px) {
+  .burger,
+  .overlay {
+    display: none;
+  }
+}
+
+@keyframes drawer {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

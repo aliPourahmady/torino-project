@@ -46,9 +46,41 @@ function Footer() {
           </div>
         </div>
         <div className={styles.mark}>
+          <div className={styles.markImage}>
+            <Image
+              src="/images/state-airline-f45c55b2 1.svg"
+              alt="airline"
+              width={78}
+              height={74}
+            />
+            <Image
+              src="/images/passenger-rights-48368f81 1.svg"
+              alt="airline"
+              width={78}
+              height={74}
+            />
+            <Image
+              src="/images/ecunion-35c3c933.svg"
+              alt="airline"
+              width={78}
+              height={74}
+            />
+            <Image
+              src="/images/samandehi-6e2b448a.svg"
+              alt="airline"
+              width={78}
+              height={74}
+            />
+            <Image
+              src="/images/aira-682b7c43.svg"
+              alt="airline"
+              width={78}
+              height={74}
+            />
+          </div>
           <div className={styles.markLogo}>
             <Image
-              src={"images/Torino (4) 1.svg"}
+              src={"/images/Torino (4) 1.svg"}
               alt="Logo"
               width={146}
               height={44}
@@ -58,41 +90,9 @@ function Footer() {
               <span>021-8574</span>
             </p>
           </div>
-          <div className={styles.markImage}>
-            <Image
-              src="images/state-airline-f45c55b2 1.svg"
-              alt="airline"
-              width={78}
-              height={74}
-            />
-            <Image
-              src="images/passenger-rights-48368f81 1.svg"
-              alt="airline"
-              width={78}
-              height={74}
-            />
-            <Image
-              src="images/ecunion-35c3c933.svg"
-              alt="airline"
-              width={78}
-              height={74}
-            />
-            <Image
-              src="images/samandehi-6e2b448a.svg"
-              alt="airline"
-              width={78}
-              height={74}
-            />
-            <Image
-              src="images/aira-682b7c43.svg"
-              alt="airline"
-              width={78}
-              height={74}
-            />
-          </div>
         </div>
       </footer>
-      <hr />
+      <hr className={styles.divider} />
       <p className={styles.watermark}>
         کلیه حقوق این وب سایت متعلق به تورینو میباشد.
       </p>

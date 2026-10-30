@@ -1,0 +1,132 @@
+.container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  width: 150px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  animation: onhover 0.3s;
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.container li img {
+  width: 14px;
+  height: 14px;
+}
+
+.container li:first-child {
+  height: 32px;
+  background-color: #f4f4f4;
+  color: #10411b;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: default;
+}
+.container li:first-child img {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  padding: 4px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+}
+
+.container li:nth-child(2) {
+  flex: 1;
+  padding: 0;
+  color: #282828;
+}
+.container li:nth-child(2) a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  padding-inline: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+.container li:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  inset-inline: 8px;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.container li:last-child {
+  flex: 1;
+  color: #d00000;
+}
+
+.container li:not(:first-child):hover {
+  background-color: #fafafa;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 246px;
+    height: 152px;
+  }
+
+  .container li {
+    gap: 8px;
+    padding-inline: 12px;
+    font-size: 14px;
+  }
+  .container li img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .container li:first-child {
+    height: 44px;
+    font-size: 16px;
+  }
+  .container li:first-child img {
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+  }
+
+  .container li:nth-child(2) a {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+  .container li:nth-child(2)::after {
+    inset-inline: 12px;
+  }
+}
+
+@keyframes onhover {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

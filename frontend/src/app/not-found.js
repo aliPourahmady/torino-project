@@ -3,25 +3,25 @@ import Link from "next/link";
 
 import styles from "./not-found.module.css";
 
-function notFound() {
+function NotFound() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h3>صفحه مورد نظر یافت نشد!</h3>
-        <button>
-          <Link href="/">بازگشت به صفحه اصلی</Link>
-        </button>
+        <h1>صفحه مورد نظر یافت نشد!</h1>
+        <Link href="/" className={styles.btn}>
+          بازگشت به صفحه اصلی
+        </Link>
       </div>
       <div className={styles.img}>
         <Image
-          src="images/Error TV.svg"
+          src="/images/Error TV.svg"
           alt="404ERROR"
-          width={555}
-          height={555}
+          width={350}
+          height={350}
         />
       </div>
     </div>
   );
 }
 
-export default notFound;
+export default NotFound;

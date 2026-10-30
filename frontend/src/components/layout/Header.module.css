@@ -1,4 +1,3 @@
-/* Header.module.css */
 .header {
   box-shadow: 0 4px 4px -3px rgba(0, 0, 0, 0.16);
 }
@@ -6,54 +5,138 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 126px;
-  padding: 24px 0;
+  margin: 0 16px;
+  padding: 12px 0;
 }
 .navbar {
   display: flex;
   align-items: center;
-  gap: 84px;
-}
-.container ul {
-  display: flex;
-  align-items: center;
-  gap: 40px;
 }
 
-.container ul li {
-  list-style-type: none;
-  font-size: 16px;
-  transition: all 0.2s ease-in-out;
-}
-.navbar ul li:hover {
-  color: var(--primary);
+.logo,
+.links,
+.loginText {
+  display: none;
 }
 
-.container span {
-  padding: 0 4px;
-}
-.user {
-  display: flex;
-  align-items: center;
-  width: 180px;
-  height: 44px;
-  gap: 4px;
-  color: var(--primary);
-  font-size: 18px;
-  font-weight: 300;
-  cursor: pointer;
-}
-.container button {
+.loginBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  border: 2px solid var(--primary);
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1.5px solid var(--primary);
   border-radius: 8px;
-  padding: 6px;
-  width: 166px;
   background-color: #fff;
   color: var(--primary);
-  font-size: 18px;
-  font-weight: 500;
+  cursor: pointer;
+}
+.sep {
+  padding: 0 4px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.userIcon {
+  width: 16px;
+  height: 16px;
+}
+.arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.hover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px 0;
+  margin: -12px 0;
+}
+
+.skeleton {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #eee;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin: 0 clamp(24px, 8vw, 126px);
+    padding: 24px 0;
+  }
+  .navbar {
+    gap: clamp(32px, 5vw, 84px);
+  }
+
+  .logo {
+    display: block;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 40px);
+    margin: 0;
+    padding: 0;
+  }
+  .links li {
+    list-style-type: none;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+  }
+  .links li:hover {
+    color: var(--primary);
+  }
+
+  .loginBtn {
+    width: 166px;
+    height: auto;
+    padding: 6px;
+    border: 2px solid var(--primary);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .loginIcon {
+    display: none;
+  }
+  .loginText {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .user {
+    width: 180px;
+    height: 44px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .userIcon,
+  .arrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hover {
+    align-self: stretch;
+    padding: 24px 0;
+    margin: -24px 0;
+  }
+
+  .skeleton {
+    width: 166px;
+    height: 44px;
+  }
 }
