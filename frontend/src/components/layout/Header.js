@@ -9,6 +9,7 @@ import { useProfile } from "@/hooks/useProfile";
 import { navLinks } from "src/const/navlinks";
 import DropDown from "@/ui/DropDown";
 import MobileMenu from "@/ui/MobileMenu";
+import Skeleton from "react-loading-skeleton";
 import styles from "./Header.module.css";
 
 function Header() {
@@ -50,7 +51,9 @@ function Header() {
         </div>
 
         {isLoading ? (
-          <div className={styles.skeleton} />
+          <div>
+            <Skeleton height="100%" containerClassName={styles.skeletonbox} />
+          </div>
         ) : profile ? (
           <div
             onPointerEnter={(e) => handleHover(e, true)}

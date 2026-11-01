@@ -63,14 +63,11 @@
   padding: 12px 0;
   margin: -12px 0;
 }
-
-.skeleton {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background-color: #eee;
+.skeletonbox {
+  display: block;
+  width: 130px;
+  height: 48px;
 }
-
 @media (min-width: 1024px) {
   .container {
     margin: 0 clamp(24px, 8vw, 126px);
@@ -133,10 +130,5 @@
     align-self: stretch;
     padding: 24px 0;
     margin: -24px 0;
-  }
-
-  .skeleton {
-    width: 166px;
-    height: 44px;
   }
 }
