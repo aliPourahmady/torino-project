@@ -1,0 +1,141 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 82px 34px 90px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  align-items: center; /* NEW: the title sits in the vertical middle of the green box */
+  justify-content: flex-start;
+  height: 128px;
+  padding: 16px;
+  border-radius: 15px 15px 0 0;
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.boxTitle h2 {
+  margin: 0 0 6px;
+  font-size: clamp(16px, 5.1vw, 22px);
+  font-weight: 500;
+}
+.boxTitle h2 span {
+  font-size: inherit;
+  font-weight: 600;
+  color: #10411b;
+}
+.boxTitle p {
+  font-size: clamp(11px, 3.1vw, 14px);
+  font-weight: 300;
+}
+
+.boxImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%; 
+  max-width: 195px;
+  line-height: 0;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 12px;
+  padding: 16px;
+  margin: 0 34px;
+}
+.phone p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.phone p img {
+  margin-bottom: 8px;
+}
+.phone button {
+  min-width: 137px;
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #10411b;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    overflow: hidden;
+    margin: 82px clamp(24px, 8vw, 126px) 90px;
+    min-height: clamp(160px, 21vw, 231px);
+  }
+
+  .box {
+    flex: 0 0 73%;
+    height: auto;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0 clamp(16px, 4vw, 56px);
+    border-radius: 0;
+  }
+
+  .boxTitle {
+    padding: 31px 27px;
+  }
+  .boxTitle h2 {
+    font-size: clamp(30px, 3.4vw, 48px);
+  }
+  .boxTitle h2 span {
+    font-size: clamp(22px, 3.4vw, 40px);
+  }
+
+  .boxTitle p {
+    margin: 0;
+    font-size: clamp(23px, 1.7vw, 32px);
+  }
+
+  .boxImg {
+    position: static;
+    align-self: flex-end;
+    flex-shrink: 0;
+    width: 45%;
+    max-width: 300px;
+  }
+  .boxImg img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .phone {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(12px, 1.6vw, 20px);
+    margin: 0;
+    padding: 16px;
+  }
+  .phone span {
+    font-size: clamp(16px, 1.7vw, 28px);
+    font-weight: 600;
+  }
+  .phone button {
+    width: clamp(120px, 14vw, 175px);
+    height: clamp(32px, 3.4vw, 44px);
+    padding: 0 clamp(16px, 2vw, 28px);
+    font-size: clamp(12px, 1.2vw, 15px);
+  }
+}

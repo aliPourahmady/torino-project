@@ -3,20 +3,46 @@ import { useTours } from "@/hooks/useTours";
 import Image from "next/image";
 import React, { useEffect } from "react";
 
+import stylse from "./TourCard.module.css";
+import {
+  formatPrice,
+  getTourDays,
+  getTourMonth,
+  getVehicleName,
+  truncate,
+} from "@/utils/formater";
+
 function TourCard({ tour }) {
-  const { image, title, price } = tour;
+  const {
+    image,
+    title,
+    price,
+    startDate,
+    endDate,
+    fleetVehicle,
+    options = [],
+  } = tour;
+
+  const days = getTourDays(startDate, endDate).toLocaleString("fa-IR");
+
+  const description = [
+    `${getTourMonth(startDate)} ماه . ${days} روزه`,
+    getVehicleName(fleetVehicle),
+    ...options,
+  ].join(" – ");
+
   return (
-    <div>
-      <div>
+    <div className={stylse.container}>
+      <div className={stylse.title}>
         <Image src={image} alt={title} width={327} height={159} />
         <h3>{title}</h3>
-        <p></p>
+        <p>{truncate(description, 40)}</p>
       </div>
-      <hr />
-      <div>
+      <hr className={stylse.line} />
+      <div className={stylse.price}>
         <button>رزرو</button>
         <p>
-          <span>{price}</span>
+          <span>{formatPrice(price)}</span>
           تومان
         </p>
       </div>

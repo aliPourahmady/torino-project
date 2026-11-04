@@ -8,7 +8,7 @@
   top: 50%;
   inset-inline-start: 12px;
   transform: translateY(-50%);
-  right: 42%;
+  right: 40%;
 }
 
 .picker {
@@ -38,17 +38,22 @@
   font-family: inherit;
 }
 
-.picker [class*="day"] {
-  font-size: 14px;
-}
-
-.picker [class*="month"] {
-  font-size: 12px;
-}
-
 @media (min-width: 768px) {
   .input {
-    height: 54px;
-    font-size: 16px;
+    height: clamp(48px, 4vw, 56px);
+    font-size: clamp(14px, 0.4vw + 10px, 16px);
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    text-align: right;
+    padding-inline: clamp(40px, 3vw, 48px) 12px;
+  }
+
+  .input:focus {
+    outline: none;
+  }
+
+  .icon {
+    right: clamp(12px, 1.2vw, 18px);
   }
 }

@@ -9,7 +9,7 @@
   border-radius: 0 0 10px 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   overflow: hidden;
-  animation: onhover 0.3s;
+  animation: dropdownIn 0.3s;
 }
 
 .container ul {
@@ -122,11 +122,13 @@
   }
 }
 
-@keyframes onhover {
-  0% {
+@keyframes dropdownIn {
+  from {
     opacity: 0;
+    transform: translateY(-4px);
   }
-  100% {
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
 }

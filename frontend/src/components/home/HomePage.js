@@ -2,6 +2,8 @@ import React from "react";
 import Banner from "./Banner";
 import TourCard from "@/tours/TourCard";
 import Tours from "./Tours";
+import Phone from "./Phone";
+import Why from "./Why";
 
 function HomePage() {
   return (
@@ -9,6 +11,8 @@ function HomePage() {
       <Banner />
       <main>
         <Tours />
+        <Phone />
+        <Why />
       </main>
     </>
   );

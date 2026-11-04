@@ -2,6 +2,11 @@ import { yekan } from "@/utils/font";
 import "./globals.css";
 import Layout from "@/layout/Layout";
 import Providers from "@/providers/Providers";
+import "vazirmatn/Vazirmatn-font-face.css";
+import "iransans/300.css";
+import "iransans/400.css";
+import "iransans/500.css";
+import "iransans/700.css";
 
 export const metadata = {
   title: "Create Next App",

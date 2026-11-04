@@ -11,12 +11,12 @@ const TOUR_COUNT = 4;
 function Tours() {
   const { data: tours, isLoading } = useTours();
   const [visibleCount, setVisibleCount] = useState(TOUR_COUNT);
-  const visibleTours = tours?.slice(0, visibleCount) ?? [];
-  const hasMore = tours ? visibleCount < 8 : false;
+  const hasMore = tours ? visibleCount < tours.length : false;
+
   return (
-    <section>
+    <section className={styles.container}>
       <h1>همه تور ها</h1>
-      <div>
+      <div className={styles.tours}>
         <ul>
           {isLoading &&
             Array.from({ length: TOUR_COUNT }).map((_, i) => (
@@ -24,21 +24,27 @@ function Tours() {
                 <Skeleton height={300} borderRadius={16} />
               </li>
             ))}
-          {visibleTours &&
-            visibleTours.map((tour) => (
-              <li key={tour.id}>
-                <TourCard tour={tour} />
-              </li>
-            ))}
+          {tours?.map((tour, i) => (
+            <li
+              key={tour.id}
+              className={i >= visibleCount ? styles.hiddenOnMobile : undefined}
+            >
+              <TourCard tour={tour} />
+            </li>
+          ))}
         </ul>
         {hasMore && (
           <button
-            type="button"
             className={styles.more}
             onClick={() => setVisibleCount((count) => count + TOUR_COUNT)}
           >
             نمایش بیشتر
-            <Image src="/images/arrow-down.svg" width={20} height={20} alt="" />
+            <Image
+              src="/images/arrow-down1.svg"
+              width={20}
+              height={20}
+              alt=""
+            />
           </button>
         )}
       </div>

@@ -1,0 +1,155 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+  text-align: center;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+}
+
+.container h2 {
+  margin: 0;
+  padding: 0 24px;
+  font-size: clamp(14px, 4.1vw, 20px);
+  font-weight: 300;
+}
+.container h2 span {
+  font-weight: 400;
+  color: var(--primary);
+  margin: 10px;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 31px;
+}
+
+.fileds {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 100%;
+}
+.fileds > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.search button {
+  margin-top: 12px;
+  border-radius: 16px;
+  padding: 8px;
+  background-color: var(--primary);
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 300;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .container {
+    align-items: center;
+    gap: clamp(16px, 2vw, 32px);
+  }
+
+  .banner {
+    height: clamp(114px, 24vw, 350px);
+    object-fit: cover;
+  }
+
+  .container h2 {
+    padding: 0;
+    font-size: clamp(28px, 2.6vw, 38px);
+  }
+
+  .search {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    width: min(874px, 100% - 2rem);
+    margin: 0;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 20px;
+    background: #fff;
+  }
+
+  .fileds {
+    display: contents;
+  }
+  .search > *,
+  .fileds > * {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .fileds > * {
+    border-inline-end: 1px solid #e5e5e5;
+  }
+
+  .search button {
+    flex: 0 0 clamp(190px, 15vw, 200px);
+    height: 51px;
+    margin-top: 0;
+    font-size: clamp(20px, 0.5vw + 12px, 24px);
+  }
+
+
+@media (min-width: 768px) {
+  .container {
+    gap: clamp(16px, 2vw, 32px);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner {
+    width: 100%;
+    height: clamp(114px, 350px);
+    object-fit: cover;
+  }
+  .container h2 {
+    font-size: clamp(28px, 2.6vw, 38px);
+  }
+
+  .search {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    padding: clamp(4px, 0.5vw, 8px);
+    width: clamp(874px, 100% -2rem);
+    margin: 0;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 20px;
+    background: #fff;
+  }
+
+  .fileds {
+    display: contents;
+  }
+  .search > *,
+  .fileds > * {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .fileds > * {
+    border-inline-end: 1px solid #e5e5e5;
+  }
+
+  .search button {
+    flex: 0 0 clamp(190px, 15vw, 200px);
+    width: 190px;
+    height: 51px;
+    margin-top: 0;
+    font-size: clamp(20px, 0.5vw + 12px, 24px);
+  }
+}
