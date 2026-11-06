@@ -1,30 +1,24 @@
 "use client";
-import { useTours } from "@/hooks/useTours";
 import TourCard from "@/tours/TourCard";
 import Image from "next/image";
 import React, { useState } from "react";
-import Skeleton from "react-loading-skeleton";
 
 import styles from "./Tours.module.css";
 
 const TOUR_COUNT = 4;
-function Tours() {
-  const { data: tours, isLoading } = useTours();
+function Tours({ tours, title = "همه تور ها" }) {
   const [visibleCount, setVisibleCount] = useState(TOUR_COUNT);
-  const hasMore = tours ? visibleCount < tours.length : false;
+  const hasMore = visibleCount < tours.length;
 
   return (
     <section className={styles.container}>
-      <h1>همه تور ها</h1>
+      <h1 className={styles.title}>{title}</h1>
+
+      {tours.length === 0 && <p>توری با این مشخصات یافت نشد</p>}
+
       <div className={styles.tours}>
         <ul>
-          {isLoading &&
-            Array.from({ length: TOUR_COUNT }).map((_, i) => (
-              <li key={i}>
-                <Skeleton height={300} borderRadius={16} />
-              </li>
-            ))}
-          {tours?.map((tour, i) => (
+          {tours.map((tour, i) => (
             <li
               key={tour.id}
               className={i >= visibleCount ? styles.hiddenOnMobile : undefined}

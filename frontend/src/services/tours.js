@@ -1,7 +1,7 @@
 import api from "@/lib/api";
 
-const getTours = async () => {
-  const { data } = await api.get("proxy/tour");
+const getTours = async (filters) => {
+  const { data } = await api.get("proxy/tour", { params: filters });
   return data;
 };
 const getTour = async (id) => {

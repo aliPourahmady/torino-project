@@ -6,7 +6,9 @@
 .container h1 {
   font-size: 20px;
   font-weight: 300;
+  margin-bottom:8px ;
 }
+
 .tours ul {
   display: flex;
   flex-direction: column;
@@ -53,6 +55,7 @@
     font-weight: 300;
     text-align: start;
   }
+
 
   .tours ul {
     display: grid;

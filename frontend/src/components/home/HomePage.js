@@ -1,18 +1,22 @@
-import React from "react";
+import { Suspense } from "react";
 import Banner from "./Banner";
-import TourCard from "@/tours/TourCard";
-import Tours from "./Tours";
+import ToursSkeleton from "./ToursSkeleton";
 import Phone from "./Phone";
 import Why from "./Why";
+import Options from "./Options";
+import ToureSection from "./ToureSection";
 
 function HomePage() {
   return (
     <>
       <Banner />
       <main>
-        <Tours />
+        <Suspense fallback={<ToursSkeleton />}>
+          <ToureSection />
+        </Suspense>
         <Phone />
         <Why />
+        <Options />
       </main>
     </>
   );

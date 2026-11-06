@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
-import { Calendar, CalendarProvider, DatePicker } from "zaman";
+import { DatePicker } from "zaman";
 
 import styles from "./Datefield.module.css";
-import DatePickerHeader from "react-multi-date-picker/plugins/date_picker_header";
 
 function DateField({ onChange, placeholder = "تاریخ" }) {
   return (
@@ -11,22 +10,22 @@ function DateField({ onChange, placeholder = "تاریخ" }) {
       <Image
         className={styles.icon}
         src="/images/calendar (1).svg"
-        width={18}
-        height={18}
+        width={20}
+        height={20}
         alt=""
       />
       <DatePicker
-        locale="fa"
+        range
         className={styles.picker}
         inputClass={styles.input}
         inputAttributes={{ placeholder, readOnly: true }}
         accentColor="#28a745"
         round="x2"
+        locale="fa"
         direction="rtl"
         weekend={[6]}
         position="center"
-        customShowDateFormat="YYYY/MM/DD"
-        onChange={(e) => onChange?.(e.value)}
+        onChange={(e) => onChange?.({ from: e.from, to: e.to })}
       />
     </div>
   );

@@ -1,19 +1,35 @@
 "use client";
 import DateField from "@/ui/DateField";
 import LocationField from "@/ui/LocationField";
-import SkeletonThems from "@/ui/SkeletonThems";
 import { getCities } from "@/utils/cities";
+import { toApiDate } from "@/utils/formater";
 import Image from "next/image";
-import React, { useState } from "react";
+import Link from "next/link";
+import { useState } from "react";
 
 import styles from "./Banner.module.css";
 
 const cities = getCities();
 
 function Banner() {
-  const [date, setDate] = useState(null);
   const [origin, setOrigin] = useState(null);
   const [destination, setDestination] = useState(null);
+  const [range, setRange] = useState(null);
+
+  // if the two dates were picked in reverse order, sort them
+  const [start, end] = [range?.from, range?.to].sort(
+    (a, b) => new Date(a) - new Date(b),
+  );
+
+  const params = new URLSearchParams();
+  if (origin) params.set("originId", origin.id);
+  if (destination) params.set("destinationId", destination.id);
+  if (start) params.set("startDate", toApiDate(start));
+  if (end) params.set("endDate", toApiDate(end));
+
+  const query = params.toString();
+  const href = query ? `/tours?${query}` : "/tours";
+
   return (
     <div className={styles.container}>
       <Image
@@ -27,6 +43,7 @@ function Banner() {
         <span>تورینو</span>
         برگزار کننده بهترین تور های داخلی و خارجی
       </h2>
+
       <div className={styles.search}>
         <div className={styles.fileds}>
           <LocationField
@@ -42,8 +59,10 @@ function Banner() {
             onChange={setDestination}
           />
         </div>
-        <DateField onChange={setDate} />
-        <button>جستجو</button>
+        <DateField onChange={setRange} />
+        <Link href={href} prefetch={false} className={styles.submit}>
+          جستجو
+        </Link>
       </div>
     </div>
   );

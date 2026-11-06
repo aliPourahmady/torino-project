@@ -1,18 +1,17 @@
 import { getTour, getTours } from "@/services/tours";
 import { useQuery } from "@tanstack/react-query";
 
-function useTours() {
+function useTours(filters) {
   return useQuery({
     queryKey: ["tours"],
-    queryFn: getTours,
-    retry: false,
+    queryFn: () => getTours(filters),
   });
 }
 
-function useTour() {
+function useTour(id) {
   return useQuery({
-    queryKey: ["tour"],
-    queryFn: getTour,
+    queryKey: ["tour",id],
+    queryFn: ()=>getTour(id),
   });
 }
 

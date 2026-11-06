@@ -69,7 +69,7 @@ function Header() {
                 alt="profile"
               />
               <span className={styles.userNumber}>
-                {digitsEnToFa(profile.mobile)}
+                {digitsEnToFa(profile?.mobile)}
               </span>
               <Image
                 className={styles.arrow}

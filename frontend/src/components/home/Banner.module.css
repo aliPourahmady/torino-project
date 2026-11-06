@@ -41,17 +41,18 @@
   min-width: 0;
 }
 
-.search button {
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 12px;
   border-radius: 16px;
   padding: 8px;
   background-color: var(--primary);
-  font-family: inherit;
   font-size: 20px;
   font-weight: 300;
   color: #ffffff;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 @media (min-width: 768px) {
@@ -91,63 +92,16 @@
     min-width: 0;
   }
 
-  .fileds > * {
-    border-inline-end: 1px solid #e5e5e5;
-  }
-
-  .search button {
-    flex: 0 0 clamp(190px, 15vw, 200px);
-    height: 51px;
-    margin-top: 0;
-    font-size: clamp(20px, 0.5vw + 12px, 24px);
-  }
-
-
-@media (min-width: 768px) {
-  .container {
-    gap: clamp(16px, 2vw, 32px);
-    justify-content: center;
-    align-items: center;
-  }
-
-  .banner {
-    width: 100%;
-    height: clamp(114px, 350px);
-    object-fit: cover;
-  }
-  .container h2 {
-    font-size: clamp(28px, 2.6vw, 38px);
-  }
-
-  .search {
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
-    padding: clamp(4px, 0.5vw, 8px);
-    width: clamp(874px, 100% -2rem);
-    margin: 0;
-    padding: 8px;
-    border: 1px solid #d9d9d9;
-    border-radius: 20px;
-    background: #fff;
-  }
-
-  .fileds {
-    display: contents;
-  }
-  .search > *,
-  .fileds > * {
-    flex: 1 1 0;
-    min-width: 0;
+  .search > :nth-child(2) {
+    flex: 1.5 1 0;
   }
 
   .fileds > * {
     border-inline-end: 1px solid #e5e5e5;
   }
 
-  .search button {
+  .submit {
     flex: 0 0 clamp(190px, 15vw, 200px);
-    width: 190px;
     height: 51px;
     margin-top: 0;
     font-size: clamp(20px, 0.5vw + 12px, 24px);

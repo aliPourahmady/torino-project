@@ -7,6 +7,7 @@ import "iransans/300.css";
 import "iransans/400.css";
 import "iransans/500.css";
 import "iransans/700.css";
+import "vazir-font/dist/font-face.css";
 
 export const metadata = {
   title: "Create Next App",

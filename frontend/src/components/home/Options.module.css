@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  margin: 43px 48px;
+}
+.line {
+  color: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  margin: 0 31px;
+}
+.info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.info div h2 {
+  font-family: "Vazir";
+  font-weight: 500;
+  font-size: 14px;
+}
+.info div p {
+  font-family: "Vazir";
+  font-weight: 300;
+  color: var(--text-color);
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .line {
+    margin: 0;
+  }
+  .info {
+    gap: 8px;
+  }
+  .info img {
+    width: 121px;
+    height: 109px;
+  }
+  .info div h2 {
+    font-size: clamp(14px, 1.8vw, 26px);
+  }
+  .info div p {
+    font-size: clamp(12px, 1vw, 16px);
+  }
+}
