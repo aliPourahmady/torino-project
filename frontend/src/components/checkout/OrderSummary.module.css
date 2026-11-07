@@ -1,0 +1,84 @@
+.card {
+  box-sizing: border-box;
+  padding: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
+}
+.name {
+  font-size: 24px;
+  font-weight: 500;
+}
+.duration {
+  font-family: "Vazir";
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+.label {
+  font-family: "Vazir";
+  font-size: 16px;
+}
+.value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-inline-start: auto;
+}
+.amount {
+  font-family: "Vazir";
+  color: #28a7e1;
+  font-size: 28px;
+  font-weight: 500;
+}
+.unit {
+  font-family: "Vazir";
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.submit {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 24px;
+  font-family: "Vazir";
+  cursor: pointer;
+}
+.submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: clamp(16px, 1.5vw, 24px);
+  }
+  .name {
+    font-size: clamp(20px, 0.6vw + 16px, 24px);
+  }
+  .amount {
+    font-size: clamp(16px, 0.8vw + 20px, 24px);
+  }
+  .submit {
+    height: clamp(46px, 1vw + 38px, 52px);
+    font-size: 24px;
+  }
+}

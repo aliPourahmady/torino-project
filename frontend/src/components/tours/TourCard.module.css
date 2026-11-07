@@ -35,16 +35,19 @@
   align-items: center;
   padding: 6px 8px;
 }
-.price button {
+.reserve {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 99px;
   height: 29px;
-  border: none;
   border-radius: 4px;
   background-color: var(--primary);
   color: #ffffff;
   font-size: 15px;
-  cursor: pointer;
+  text-decoration: none;
 }
+
 .price p {
   font-weight: 300;
   font-size: 12px;
@@ -90,7 +93,7 @@
     padding: 8px clamp(8px, 0.8vw, 12px) clamp(8px, 0.8vw, 12px);
   }
 
-  .price button {
+  .reserve {
     min-width: 0;
     height: auto;
     padding: 3px clamp(14px, 1.4vw, 24px);

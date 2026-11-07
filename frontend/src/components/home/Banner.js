@@ -16,7 +16,6 @@ function Banner() {
   const [destination, setDestination] = useState(null);
   const [range, setRange] = useState(null);
 
-  // if the two dates were picked in reverse order, sort them
   const [start, end] = [range?.from, range?.to].sort(
     (a, b) => new Date(a) - new Date(b),
   );
@@ -28,7 +27,7 @@ function Banner() {
   if (end) params.set("endDate", toApiDate(end));
 
   const query = params.toString();
-  const href = query ? `/tours?${query}` : "/tours";
+  const href = query ? `/?${query}` : "/";
 
   return (
     <div className={styles.container}>
@@ -60,7 +59,12 @@ function Banner() {
           />
         </div>
         <DateField onChange={setRange} />
-        <Link href={href} prefetch={false} className={styles.submit}>
+        <Link
+          href={href}
+          scroll={false}
+          prefetch={false}
+          className={styles.submit}
+        >
           جستجو
         </Link>
       </div>

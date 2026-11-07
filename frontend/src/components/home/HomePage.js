@@ -1,19 +1,21 @@
-import { Suspense } from "react";
 import Banner from "./Banner";
-import ToursSkeleton from "./ToursSkeleton";
+import Tours from "./Tours";
 import Phone from "./Phone";
 import Why from "./Why";
 import Options from "./Options";
-import ToureSection from "./ToureSection";
 
-function HomePage() {
+function HomePage({ tours, filters }) {
+  const isSearch = Object.values(filters).some(Boolean);
+
   return (
     <>
       <Banner />
       <main>
-        <Suspense fallback={<ToursSkeleton />}>
-          <ToureSection />
-        </Suspense>
+        <Tours
+          key={JSON.stringify(filters)}
+          tours={tours}
+          title={isSearch ? "نتایج جستجو" : "همه تور ها"}
+        />
         <Phone />
         <Why />
         <Options />

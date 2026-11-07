@@ -11,9 +11,11 @@ import {
   getVehicleName,
   truncate,
 } from "@/utils/formater";
+import Link from "next/link";
 
 function TourCard({ tour }) {
   const {
+    id,
     image,
     title,
     price,
@@ -40,7 +42,9 @@ function TourCard({ tour }) {
       </div>
       <hr className={stylse.line} />
       <div className={stylse.price}>
-        <button>رزرو</button>
+        <Link href={`/tours/${id}`} className={stylse.reserve}>
+          رزرو
+        </Link>
         <p>
           <span>{formatPrice(price)}</span>
           تومان

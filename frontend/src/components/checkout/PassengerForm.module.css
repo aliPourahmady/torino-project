@@ -59,3 +59,62 @@
   color: var(--error);
   font-size: 12px;
 }
+
+/* ---------- Date picker ---------- */
+.dateWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.picker {
+  width: 100%;
+  font-family: inherit;
+}
+
+.field .dateInput {
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: 44px 12px;
+  font-family: inherit;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    padding: clamp(16px, 2vw, 24px);
+  }
+
+  .title {
+    width: 100%;
+    margin-bottom: 4px;
+    font-size: clamp(20px, 0.6vw + 16px, 24px);
+  }
+
+  .field {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .gender {
+    order: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .field {
+    width: calc((100% - 40px) / 3);
+  }
+}

@@ -3,11 +3,13 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 
-import styles from "./Traveler.module.css";
+import styles from "./PassengerForm.module.css";
+import { passengerSchema } from "@/validations/PassengerSchema";
 
-const DateField = dynamic(() => import("@/ui/DateField"), { ssr: false });
+const DatePicker = dynamic(() => import("zaman").then((m) => m.DatePicker), {
+  ssr: false,
+});
 
 function PassengerForm({ onSubmit }) {
   const {
@@ -17,7 +19,7 @@ function PassengerForm({ onSubmit }) {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(PassengerForm),
+    resolver: yupResolver(passengerSchema),
     defaultValues: {
       fullName: "",
       nationalCode: "",
@@ -33,6 +35,7 @@ function PassengerForm({ onSubmit }) {
       id="passenger-form"
       className={styles.card}
       onSubmit={handleSubmit(onSubmit)}
+      noValidate
     >
       <h2 className={styles.title}>
         <Image src="/images/profile.svg" width={24} height={24} alt="" />
@@ -58,7 +61,7 @@ function PassengerForm({ onSubmit }) {
         )}
       </div>
 
-      <div className={styles.field}>
+      <div className={`${styles.field} ${styles.gender}`}>
         <select
           className={`${styles.select} ${gender ? "" : styles.placeholder}`}
           {...register("gender")}
@@ -79,7 +82,29 @@ function PassengerForm({ onSubmit }) {
           name="birthDate"
           control={control}
           render={({ field }) => (
-            <DateField placeholder="تاریخ تولد" onChange={field.onChange} />
+            <div className={styles.dateWrapper}>
+              <DatePicker
+                className={styles.picker}
+                inputClass={styles.dateInput}
+                inputAttributes={{ placeholder: "تاریخ تولد", readOnly: true }}
+                accentColor="#28a745"
+                round="x2"
+                locale="fa"
+                direction="rtl"
+                weekend={[6]}
+                position="center"
+                to={new Date()}
+                onChange={(e) => field.onChange(e.value)}
+              />
+
+              <Image
+                className={styles.icon}
+                src="/images/calendar (1).svg"
+                width={20}
+                height={20}
+                alt=""
+              />
+            </div>
           )}
         />
         {errors.birthDate && (

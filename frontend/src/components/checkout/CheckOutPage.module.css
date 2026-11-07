@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 16px;
+}
+.message {
+  margin: 90px 16px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .page {
+    background-color: rgba(243, 243, 243, 1);
+    padding-block: clamp(32px, 3.3vw, 48px);
+    min-height: 570px; 
+  }
+
+  .container {
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(16px, 2vw, 32px);
+    padding-inline: clamp(16px, 8.7vw, 126px);
+  }
+  .form {
+    flex: 1;
+    min-width: 0;
+  }
+  .container > aside {
+    flex: 0 0 clamp(240px, 22vw, 300px);
+  }
+}

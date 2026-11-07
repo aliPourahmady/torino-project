@@ -26,7 +26,20 @@ const formatPrice = (price) =>
 
 export const getVehicleName = (vehicle) =>
   vehicleNames[vehicle?.toLowerCase()] ?? vehicle;
-// "2026-11-07" in the user's own time zone
-export const toApiDate = (value) => new Date(value).toLocaleDateString("en-CA");
+const toApiDate = (value) => new Date(value).toLocaleDateString("en-CA");
+const formatDate = (date) =>
+  new Date(date).toLocaleDateString("fa-IR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 
-export { getTourDays, getTourMonth, truncate, formatPrice };
+export {
+  getTourDays,
+  getTourMonth,
+  truncate,
+  formatPrice,
+  formatDate,
+  toApiDate,
+};
