@@ -36,7 +36,7 @@ function CheckOutPage() {
     <div className={styles.page}>
       <div className={styles.container}>
         <div className={styles.form}>
-          <PassengerForm onSubmit={onSubmit} />
+          <PassengerForm onSubmit={onSubmit} title="مشخصات مسافر" />
         </div>
         <OrderSummary basket={basket} isPending={isPending} />
       </div>

@@ -1,12 +1,7 @@
 import { digitsEnToFa } from "@persian-tools/persian-tools";
+import { vehicles } from "src/const/vehicles";
+import { transactionTypes } from "src/const/transactionTypes";
 const DAY = 24 * 60 * 60 * 1000;
-const vehicleNames = {
-  airplane: "پرواز",
-  train: "قطار",
-  bus: "اتوبوس",
-  ship: "کشتی",
-  suv: "ماشین",
-};
 
 const getTourDays = (startDate, endDate) =>
   Math.round((new Date(endDate) - new Date(startDate)) / DAY);
@@ -24,8 +19,17 @@ const truncate = (text, max = 30) =>
 const formatPrice = (price) =>
   digitsEnToFa(Number(price).toLocaleString("en-US"));
 
+const findVehicle = (vehicle) =>
+  vehicles.find((v) => v.key === vehicle?.toLowerCase());
+
 export const getVehicleName = (vehicle) =>
-  vehicleNames[vehicle?.toLowerCase()] ?? vehicle;
+  findVehicle(vehicle)?.label ?? vehicle;
+
+const getTransactionTypeName = (type) =>
+  transactionTypes.find((t) => t.key === type?.toLowerCase())?.label ?? type;
+
+export const getVehicleIcon = (vehicle) => findVehicle(vehicle)?.icon;
+
 const toApiDate = (value) => new Date(value).toLocaleDateString("en-CA");
 const formatDate = (date) =>
   new Date(date).toLocaleDateString("fa-IR", {
@@ -35,6 +39,34 @@ const formatDate = (date) =>
     timeZone: "UTC",
   });
 
+const weekdayFormatter = new Intl.DateTimeFormat("fa-IR", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+const formatDateWithWeekday = (date) =>
+  weekdayFormatter.format(new Date(date)).replace("،", "");
+
+const isTourFinished = (endDate) =>
+  endDate ? new Date(endDate).getTime() < Date.now() : false;
+
+const formatDateTime = (value) => {
+  const date = new Date(value);
+  const day = date.toLocaleDateString("fa-IR", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  const time = date.toLocaleTimeString("fa-IR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+  return `${time} - ${day}`;
+};
 export {
   getTourDays,
   getTourMonth,
@@ -42,4 +74,8 @@ export {
   formatPrice,
   formatDate,
   toApiDate,
+  formatDateTime,
+  formatDateWithWeekday,
+  isTourFinished,
+  getTransactionTypeName,
 };

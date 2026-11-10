@@ -1,0 +1,16 @@
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.success {
+  background: #d3f0d8;
+  color: var(--text-color);
+}
+.warning {
+  background: #f3eab5;
+  color: #c9a400;
+}

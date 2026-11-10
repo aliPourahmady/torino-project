@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { navLinks as links } from "src/const/navlinks";
 
 import styles from "./MobileMenu.module.css";
 
-function MobileMenu({ links }) {
+function MobileMenu() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 

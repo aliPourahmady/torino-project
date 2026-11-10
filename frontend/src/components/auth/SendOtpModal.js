@@ -44,7 +44,7 @@ function SendOtpModal() {
     <div className={styles.modal} onClick={() => dispatch(closeModal())}>
       <div className={styles.container} onClick={(e) => e.stopPropagation()}>
         <Image
-          src="images/add.svg"
+          src="/images/add (1).svg"
           width={34}
           height={34}
           onClick={() => dispatch(closeModal())}
@@ -73,7 +73,6 @@ function SendOtpModal() {
           </button>
         </form>
       </div>
-      <Toaster richColors />
     </div>
   );
 }

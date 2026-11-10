@@ -30,7 +30,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.navbar}>
-          <MobileMenu links={navLinks} />
+          <MobileMenu />
 
           <Image
             className={styles.logo}
@@ -54,7 +54,7 @@ function Header() {
           <div>
             <Skeleton height="100%" containerClassName={styles.skeletonbox} />
           </div>
-        ) : profile ? (
+        ) : profile?.mobile ? (
           <div
             onPointerEnter={(e) => handleHover(e, true)}
             onPointerLeave={(e) => handleHover(e, false)}
@@ -69,7 +69,7 @@ function Header() {
                 alt="profile"
               />
               <span className={styles.userNumber}>
-                {digitsEnToFa(profile?.mobile)}
+                {digitsEnToFa(profile.mobile)}
               </span>
               <Image
                 className={styles.arrow}

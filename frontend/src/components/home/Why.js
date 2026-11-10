@@ -16,14 +16,14 @@ function Why() {
             <span>؟</span>
             <Image
               className={styles.shape}
-              src="./images/Group 7.svg"
+              src="/images/Group 7.svg"
               alt="question"
               width={34}
               height={38}
             />
             <Image
               className={styles.circle}
-              src="./images/Group 7 (1).svg"
+              src="/images/Group 7 (1).svg"
               alt="circle question"
               width={34}
               height={38}

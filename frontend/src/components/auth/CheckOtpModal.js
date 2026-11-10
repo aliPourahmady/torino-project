@@ -51,7 +51,7 @@ function CheckOtpModal() {
     <div className={styles.modal} onClick={() => dispatch(closeModal())}>
       <div className={styles.container} onClick={(e) => e.stopPropagation()}>
         <Image
-          src="images/Line arrow-left.svg"
+          src="/images/Line arrow-left.svg"
           width={24}
           height={24}
           onClick={() => dispatch(setStep("mobile"))}
@@ -103,7 +103,6 @@ function CheckOtpModal() {
           ورود به تورینو
         </button>
       </div>
-      <Toaster richColors />
     </div>
   );
 }

@@ -1,0 +1,179 @@
+.card {
+  background: #fff;
+  border: 1px solid #cbcbcb;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 16px 0;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 300;
+  color: #282828;
+}
+
+.editBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 0;
+  font-size: 13px;
+  color: var(--complementry);
+  cursor: pointer;
+}
+
+.userBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.userBody > .editBtn {
+  align-self: flex-end;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.ltr {
+  direction: ltr;
+  text-align: right;
+}
+
+.inlineForm {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inlineForm .confirm,
+.inlineForm .cancel {
+  flex: none;
+  width: 76px;
+  height: 48px;
+}
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  background: #fff;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.input[aria-invalid="true"] {
+  border-color: #d32f2f;
+}
+
+.error {
+  font-size: 12px;
+  color: #d32f2f;
+}
+
+.confirm,
+.cancel {
+  height: 44px;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.confirm {
+  background: var(--primary);
+  color: #fff;
+}
+
+.confirm:hover:not(:disabled) {
+  background: var(--primary);
+}
+
+.confirm:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancel {
+  background: #fff;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 16px 24px 0;
+  }
+
+  .userBody {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 24px 24px;
+  }
+
+  .userBody > * {
+    flex: none;
+  }
+
+  .userBody > .editBtn {
+    align-self: auto;
+  }
+
+  .row {
+    justify-content: flex-start;
+    gap: 36px;
+  }
+
+  .inlineForm {
+    gap: 10px;
+  }
+
+  .field {
+    flex: none;
+  }
+
+  .input {
+    width: 255px;
+    height: 45px;
+  }
+
+  .inlineForm .confirm {
+    width: 122px;
+    height: 45px;
+  }
+
+
+}

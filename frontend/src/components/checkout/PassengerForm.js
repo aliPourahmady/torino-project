@@ -11,7 +11,7 @@ const DatePicker = dynamic(() => import("zaman").then((m) => m.DatePicker), {
   ssr: false,
 });
 
-function PassengerForm({ onSubmit }) {
+function PassengerForm({ onSubmit, title }) {
   const {
     register,
     control,
@@ -39,7 +39,7 @@ function PassengerForm({ onSubmit }) {
     >
       <h2 className={styles.title}>
         <Image src="/images/profile.svg" width={24} height={24} alt="" />
-        مشخصات مسافر
+        {title}
       </h2>
 
       <div className={styles.field}>

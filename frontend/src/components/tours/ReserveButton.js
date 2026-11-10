@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 
 import { useAddToBasket } from "@/hooks/useBasket";
 import { openModal } from "@/store/features/auth/authSlice";
@@ -18,6 +18,7 @@ function ReserveButton({ tourId, className }) {
         const status = error.response?.status;
         if (status === 401 || status === 403) {
           dispatch(openModal({ redirectTo: `/tours/${tourId}` }));
+          toast.error("لطفا برای خرید و رزرو به حساب خود وارد شوید");
         } else {
           toast.error(
             error.response?.data?.message ??
@@ -29,14 +30,16 @@ function ReserveButton({ tourId, className }) {
   };
 
   return (
-    <button
-      type="button"
-      className={className}
-      onClick={clickHandler}
-      disabled={isPending}
-    >
-      {isPending ? "در حال افزودن..." : "رزرو و خرید"}
-    </button>
+    <>
+      <button
+        type="button"
+        className={className}
+        onClick={clickHandler}
+        disabled={isPending}
+      >
+        {isPending ? "در حال افزودن..." : "رزرو و خرید"}
+      </button>
+    </>
   );
 }
 
