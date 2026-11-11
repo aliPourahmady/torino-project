@@ -1,7 +1,5 @@
 "use client";
-import { useTours } from "@/hooks/useTours";
 import Image from "next/image";
-import React, { useEffect } from "react";
 
 import stylse from "./TourCard.module.css";
 import {

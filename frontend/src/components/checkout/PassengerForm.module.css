@@ -60,7 +60,6 @@
   font-size: 12px;
 }
 
-/* ---------- Date picker ---------- */
 .dateWrapper {
   position: relative;
   width: 100%;
@@ -68,14 +67,12 @@
 
 .picker {
   width: 100%;
-  font-family: inherit;
 }
 
 .field .dateInput {
   box-sizing: border-box;
   width: 100%;
   padding-inline: 44px 12px;
-  font-family: inherit;
   white-space: nowrap;
   text-overflow: ellipsis;
   cursor: pointer;

@@ -1,9 +1,7 @@
 import Image from "next/image";
-import React from "react";
+import { digitsEnToFa } from "@persian-tools/persian-tools";
 
 import styles from "./Phone.module.css";
-import { formatPrice } from "@/utils/formater";
-import { digitsEnToFa } from "@persian-tools/persian-tools";
 
 function Phone() {
   return (

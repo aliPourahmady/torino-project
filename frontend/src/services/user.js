@@ -1,22 +1,23 @@
 import api from "@/lib/api";
 
-export const getProfile = async () => {
-  const { data } = await api.get("proxy/user/profile");
+const getProfile = async () => {
+  const { data } = await api.get("/user/profile");
   return data;
 };
 
-export const putProfile = async (user) => {
-  const { data } = await api.put("proxy/user/profile", user);
+const putProfile = async (user) => {
+  const { data } = await api.put("/user/profile", user);
   return data;
 };
 
-export const getUserTours = async () => {
-  const { data } = await api.get("proxy/user/tours");
+const getUserTours = async () => {
+  const { data } = await api.get("/user/tours");
   return data;
 };
 
-export const getUserTransactions = async () => {
-  const { data } = await api.get("proxy/user/transactions");
+const getUserTransactions = async () => {
+  const { data } = await api.get("/user/transactions");
   return data;
 };
-export const logout = () => api.post("auth/logout");
+
+export { getProfile, putProfile, getUserTours, getUserTransactions };

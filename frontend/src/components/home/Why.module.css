@@ -19,7 +19,8 @@
   color: white;
 }
 .title h2 {
-  font-weight: 600;
+  font-family: "Vazirmatn";
+  font-weight: 800;
   font-size: 24px;
 }
 .torino {
@@ -54,7 +55,6 @@
     align-items: center;
     justify-content: center;
     gap: clamp(24px, 5.5vw, 90px);
-    /* gap: 110px; */
     max-width: 1200px;
     margin: 193px auto 31px;
     padding-inline: clamp(24px, 8vw, 96px);
@@ -77,7 +77,7 @@
     margin-bottom: 16px;
   }
   .title h1 {
-    width: clamp(34px, 2.7vw + 13px, 52px);
+    width: clamp(34px, 2.7vw, 52px);
     flex-shrink: 0;
   }
   .title h1 span {
@@ -89,7 +89,7 @@
   }
   .title h2,
   .torino {
-    font-size: clamp(24px, 1.8vw + 10px, 36px);
+    font-size: clamp(24px, 1.8vw, 36px);
   }
 
   .content {
@@ -97,16 +97,16 @@
   }
   .content h3 {
     margin-bottom: 12px;
-    font-size: clamp(18px, 1vw + 10px, 24px);
+    font-size: clamp(18px, 1vw, 24px);
   }
   .content p {
     text-align: justify;
-    font-size: clamp(14px, 0.9vw + 8px, 20px);
+    font-size: clamp(14px, 0.9vw, 20px);
     line-height: 2.2;
   }
 
   .media {
     flex-shrink: 0;
-    padding-inline-end: clamp(86px, 3vw + 63px, 106px);
+    padding-inline-end: clamp(86px, 3vw, 106px);
   }
 }

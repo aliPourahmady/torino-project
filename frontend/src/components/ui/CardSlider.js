@@ -4,9 +4,9 @@ import { useState } from "react";
 import { digitsEnToFa } from "@persian-tools/persian-tools";
 import { EffectCards } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/effect-cards";
+
 import styles from "./CardSlider.module.css";
 
 function CardSlider({ slides }) {

@@ -97,7 +97,6 @@
     min-width: 0;
     height: auto;
     padding: 3px clamp(14px, 1.4vw, 24px);
-    font-size: inherit;
   }
 
   .price p span {

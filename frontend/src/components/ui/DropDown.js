@@ -1,28 +1,25 @@
 "use client";
-import { logout } from "@/services/user";
 import Image from "next/image";
 import Link from "next/link";
-
-import styles from "./DropDown.module.css";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
+import { logout } from "@/services/auth";
+
+import styles from "./DropDown.module.css";
 
 function DropDown({ mobile }) {
   const queryCLient = useQueryClient();
   const router = useRouter();
 
-  const logoutHandler = async () => {
-    try {
-      await logout();
-      queryCLient.setQueryData(["profile"], null);
-      router.replace("/");
-      router.refresh();
-      toast.success("با موفقیت از حساب خود خارج شدید");
-    } catch (er) {
-      toast.error("خروج از حساب با مشکل مواجه شد.");
-    }
+  const logoutHandler = () => {
+    logout();
+    queryCLient.setQueryData(["profile"], null);
+    router.replace("/");
+    router.refresh();
+    toast.success("با موفقیت از حساب خود خارج شدید");
   };
+
   return (
     <div className={styles.container}>
       <ul>

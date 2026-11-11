@@ -5,7 +5,7 @@ import Why from "./Why";
 import Options from "./Options";
 
 function HomePage({ tours, filters }) {
-  const isSearch = Object.values(filters).some(Boolean);
+  const isSearch = Object.keys(filters).length > 0;
 
   return (
     <>

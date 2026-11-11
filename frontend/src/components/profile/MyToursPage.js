@@ -1,20 +1,26 @@
 "use client";
 
 import { useUserTours } from "@/hooks/useProfile";
-import styles from "./MyToursPage.module.css";
 import MyToursCard from "./MyToursCard";
+import Skeleton from "react-loading-skeleton";
+
+import styles from "./MyToursPage.module.css";
 
 function MyToursPage() {
-  const { data, isPending, isError, refetch, isFetching } = useUserTours();
-  const tours = Array.isArray(data) ? data : (data?.tours ?? []);
+  const {
+    data: tours = [],
+    isPending,
+    isError,
+    refetch,
+    isFetching,
+  } = useUserTours();
 
   return (
     <section className={styles.wrapper} aria-busy={isPending}>
       {isPending && (
-        <div className={styles.list} aria-label="در حال بارگذاری">
-          {[0, 1].map((i) => (
-            <div key={i} className={styles.skeleton} />
-          ))}
+        <div className={styles.list}>
+          <Skeleton height={168} borderRadius={10} />
+          <Skeleton height={168} borderRadius={10} />
         </div>
       )}
 

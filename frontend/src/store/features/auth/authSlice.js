@@ -1,11 +1,10 @@
-// store/authModalSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const authModalSlice = createSlice({
   name: "authModal",
   initialState: {
     isOpen: false,
-    step: "mobile", // "mobile" | "otp"
+    step: "mobile", 
     mobile: "",
     redirectAfterLogin: null,
   },

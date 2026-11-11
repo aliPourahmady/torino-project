@@ -1,11 +1,7 @@
 import { addCommas, digitsEnToFa } from "@persian-tools/persian-tools";
-import styles from "./OrderSummary.module.css";
+import { getTourDays } from "@/utils/formater";
 
-function getDuration(start, end) {
-  const nights = Math.round((new Date(end) - new Date(start)) / 86400000);
-  if (Number.isNaN(nights)) return "";
-  return digitsEnToFa(`${nights + 1} روز و ${nights} شب`);
-}
+import styles from "./OrderSummary.module.css";
 
 function OrderSummary({ basket, isPending }) {
   const { title, price, startDate, endDate } = basket;
@@ -15,7 +11,7 @@ function OrderSummary({ basket, isPending }) {
       <div className={styles.top}>
         <h3 className={styles.name}>{title}</h3>
         <span className={styles.duration}>
-          {getDuration(startDate, endDate)}
+          {getTourDays(startDate, endDate)}
         </span>
       </div>
 

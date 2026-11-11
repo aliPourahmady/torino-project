@@ -22,15 +22,15 @@ const formatPrice = (price) =>
 const findVehicle = (vehicle) =>
   vehicles.find((v) => v.key === vehicle?.toLowerCase());
 
-export const getVehicleName = (vehicle) =>
-  findVehicle(vehicle)?.label ?? vehicle;
+const getVehicleName = (vehicle) => findVehicle(vehicle)?.label ?? vehicle;
 
 const getTransactionTypeName = (type) =>
   transactionTypes.find((t) => t.key === type?.toLowerCase())?.label ?? type;
 
-export const getVehicleIcon = (vehicle) => findVehicle(vehicle)?.icon;
+const getVehicleIcon = (vehicle) => findVehicle(vehicle)?.icon;
 
 const toApiDate = (value) => new Date(value).toLocaleDateString("en-CA");
+
 const formatDate = (date) =>
   new Date(date).toLocaleDateString("fa-IR", {
     day: "numeric",
@@ -67,6 +67,7 @@ const formatDateTime = (value) => {
   });
   return `${time} - ${day}`;
 };
+
 export {
   getTourDays,
   getTourMonth,
@@ -78,4 +79,6 @@ export {
   formatDateWithWeekday,
   isTourFinished,
   getTransactionTypeName,
+  getVehicleIcon,
+  getVehicleName,
 };

@@ -1,8 +1,20 @@
 import api from "@/lib/api";
+import { deleteCookie, setCookie } from "@/utils/cookie";
 
-const sendOtp = async (mobile) => api.post("auth/send-otp", { mobile });
+async function sendOtp(mobile) {
+  const { data } = await api.post("/auth/send-otp", { mobile });
+  return data;
+}
 
-const checkOtp = async (mobile, code) =>
-  api.post("auth/check-otp", { mobile, code });
+async function checkOtp(mobile, code) {
+  const { data } = await api.post("/auth/check-otp", { mobile, code });
+  setCookie("accessToken", data.accessToken, 1 / 24);
+  setCookie("refreshToken", data.refreshToken, 7);
+  return data;
+}
 
-export { sendOtp, checkOtp };
+function logout() {
+  deleteCookie("accessToken");
+  deleteCookie("refreshToken");
+}
+export { sendOtp, checkOtp, logout };

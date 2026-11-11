@@ -5,7 +5,6 @@ function Profile() {
   return (
     <div>
       <ProfilePgae />
-
     </div>
   );
 }

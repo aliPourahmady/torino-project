@@ -47,7 +47,7 @@
   }
 
   .swiper {
-    width: clamp(255px, 19.94vw + 101.9px, 389px);
-    height: clamp(284px, 29.02vw + 61.1px, 479px);
+    width: clamp(255px, 19.94vw, 389px);
+    height: clamp(284px, 29.02vw, 479px);
   }
 }

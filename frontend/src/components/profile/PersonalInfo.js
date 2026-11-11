@@ -8,6 +8,7 @@ import { digitsEnToFa } from "@persian-tools/persian-tools";
 import { personalSchema } from "@/validations/ProfileSchema";
 import { useUpdateProfile } from "@/hooks/useProfile";
 import { fromApi, GENDERS } from "@/utils/profileMapper";
+
 import styles from "./PersonalInfo.module.css";
 
 function PersonalInfo({ profile }) {
@@ -27,7 +28,6 @@ function PersonalInfo({ profile }) {
     defaultValues: current,
   });
 
-  // close the calendar when clicking outside of the birth date field
   useEffect(() => {
     if (!isCalendarOpen) return;
     const closeOnOutsideClick = (e) => {
@@ -52,7 +52,6 @@ function PersonalInfo({ profile }) {
       await mutateAsync(values);
       setIsEditing(false);
     } catch {
-      // the hook already shows the error toast
     }
   };
 
@@ -64,7 +63,6 @@ function PersonalInfo({ profile }) {
   return (
     <section className={styles.card}>
       <header className={styles.header}>
-        {/* mobile title is "ویرایش اطلاعات شخصی" while editing, desktop is "اطلاعات شخصی" */}
         <h2 className={styles.title}>
           {isEditing && <span className={styles.editPrefix}>ویرایش </span>}
           اطلاعات شخصی
@@ -114,7 +112,6 @@ function PersonalInfo({ profile }) {
                 )}
               </div>
 
-              {/* birthDate is third on desktop, last on mobile (see .birthField) */}
               <div className={`${styles.field} ${styles.birthField}`}>
                 <div className={styles.dateWrap} ref={dateRef}>
                   <Controller

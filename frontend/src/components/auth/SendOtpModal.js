@@ -1,8 +1,5 @@
 "use client";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./SendOtpModal.module.css";
-import { useState } from "react";
-import { digitsFaToEn } from "@persian-tools/persian-tools";
 import Image from "next/image";
 import {
   closeModal,
@@ -13,7 +10,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { mobileSchema } from "@/validations/PhoneSchema";
 import { sendOtp } from "@/services/auth";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
+
+import styles from "./SendOtpModal.module.css";
 
 function SendOtpModal() {
   const { isOpen, step } = useSelector((state) => state.authModal);
@@ -34,9 +33,7 @@ function SendOtpModal() {
       dispatch(setMobile(mobile));
       dispatch(setStep("otp"));
     } catch (er) {
-      toast.error("ارسال کد با مشکل مواجه شد لطفا دوباره تلاش کنید.", {
-        position: "top-right",
-      });
+      toast.error("ارسال کد با مشکل مواجه شد لطفا دوباره تلاش کنید.", {});
     }
   };
 

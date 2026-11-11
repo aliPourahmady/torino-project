@@ -12,7 +12,10 @@
 .info {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
+}
+.info div {
+  padding-bottom: 10px;
 }
 .info div h2 {
   font-family: "Vazir";
@@ -24,6 +27,7 @@
   font-weight: 300;
   color: var(--text-color);
   font-size: 12px;
+  padding-top: 5px;
 }
 
 @media (min-width: 768px) {

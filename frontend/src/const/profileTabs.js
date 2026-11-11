@@ -1,4 +1,3 @@
-// src/const/profileTabs.js
 const profileTabs = [
   {
     href: "/profile",

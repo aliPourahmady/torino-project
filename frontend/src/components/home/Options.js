@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 
 import styles from "./Options.module.css";
 
@@ -10,9 +9,9 @@ function Options() {
       <div className={styles.container}>
         <div className={styles.info}>
           <Image
-            src="/images/Group 16 (1).svg"
-            width={71}
-            height={64}
+            src="/images/discount1.svg"
+            width={80}
+            height={80}
             alt="discount"
           />
           <div>
@@ -22,9 +21,9 @@ function Options() {
         </div>
         <div className={styles.info}>
           <Image
-            src="/images/Group 17 (1).svg"
-            width={64}
-            height={64}
+            src="/images/chat1.svg"
+            width={80}
+            height={80}
             alt="suppoert"
           />
           <div>
@@ -33,12 +32,7 @@ function Options() {
           </div>
         </div>
         <div className={styles.info}>
-          <Image
-            src="/images/Group 18 (1).svg"
-            width={61}
-            height={61}
-            alt="heart"
-          />
+          <Image src="/images/heart1.svg" width={80} height={80} alt="heart" />
           <div>
             <h2>رضایت کاربران</h2>
             <p>رضایت بیش از 10هزار کاربر از تور های ما.</p>

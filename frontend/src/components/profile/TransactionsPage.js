@@ -7,6 +7,7 @@ import {
   formatPrice,
   getTransactionTypeName,
 } from "@/utils/formater";
+
 import styles from "./TransactionsPage.module.css";
 
 function TransactionsPage() {

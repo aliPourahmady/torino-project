@@ -1,17 +1,15 @@
 "use client";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { passengerSchema } from "@/validations/PassengerSchema";
+import { fromApi } from "@/utils/profileMapper";
+import { DatePicker } from "zaman";
 
 import styles from "./PassengerForm.module.css";
-import { passengerSchema } from "@/validations/PassengerSchema";
 
-const DatePicker = dynamic(() => import("zaman").then((m) => m.DatePicker), {
-  ssr: false,
-});
-
-function PassengerForm({ onSubmit, title }) {
+function PassengerForm({ onSubmit, title, profile }) {
+  const current = fromApi(profile);
   const {
     register,
     control,
@@ -20,12 +18,7 @@ function PassengerForm({ onSubmit, title }) {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(passengerSchema),
-    defaultValues: {
-      fullName: "",
-      nationalCode: "",
-      gender: "",
-      birthDate: null,
-    },
+    defaultValues: current,
   });
 
   const gender = watch("gender");
@@ -84,6 +77,7 @@ function PassengerForm({ onSubmit, title }) {
           render={({ field }) => (
             <div className={styles.dateWrapper}>
               <DatePicker
+                defaultValue={field.value || undefined}
                 className={styles.picker}
                 inputClass={styles.dateInput}
                 inputAttributes={{ placeholder: "تاریخ تولد", readOnly: true }}
@@ -103,6 +97,7 @@ function PassengerForm({ onSubmit, title }) {
                 width={20}
                 height={20}
                 alt=""
+                {...register("birthDate")}
               />
             </div>
           )}

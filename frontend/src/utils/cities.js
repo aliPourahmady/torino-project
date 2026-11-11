@@ -1,7 +1,9 @@
 import locations from "../data/locations.json";
 
-export const getCities = () => locations;
+const getCities = () => locations;
 
 const namesById = Object.fromEntries(locations.map((l) => [l.id, l.name]));
 
-export const getLocationName = (location) => namesById[location.id];
+const getLocationName = (location) => namesById[location.id];
+
+export { getCities, getLocationName };

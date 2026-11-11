@@ -1,4 +1,5 @@
 import api from "@/lib/api";
 
-export const createOrder = (data) =>
-  api.post("/proxy/order", data).then((res) => res.data);
+const createOrder = (data) => api.post("/order", data).then((res) => res.data);
+
+export { createOrder };

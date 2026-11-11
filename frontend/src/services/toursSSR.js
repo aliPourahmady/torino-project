@@ -1,7 +1,7 @@
-const API_URL = process.env.NEXT_API_URL?.replace(/\/$/, "");
+const API_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const ALLOWED = ["originId", "destinationId", "startDate", "endDate"];
 
-export async function getToursServer(filters = {}) {
+async function getToursServer(filters = {}) {
   const params = new URLSearchParams();
   for (const key of ALLOWED) {
     const value = filters[key];
@@ -17,7 +17,7 @@ export async function getToursServer(filters = {}) {
   return res.json();
 }
 
-export async function getTourServer(id) {
+async function getTourServer(id) {
   const res = await fetch(`${API_URL}/tour/${encodeURIComponent(id)}`, {
     next: { revalidate: 60 },
   });
@@ -26,3 +26,4 @@ export async function getTourServer(id) {
   if (!res.ok) throw new Error(`خطا در دریافت اطلاعات تور (${res.status})`);
   return res.json();
 }
+export { getToursServer, getTourServer };

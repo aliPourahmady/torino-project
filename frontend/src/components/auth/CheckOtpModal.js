@@ -1,27 +1,23 @@
 "use client";
 import { OTPInput } from "input-otp";
 import { useState } from "react";
-import styles from "./CheckOtpModal.module.css";
 import {
   closeModal,
-  setMobile,
   setStep,
 } from "@/store/features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import { OtpTimer } from "@siamf/otp-timer";
-import { toast, Toaster } from "sonner";
+import { toast} from "sonner";
 import { checkOtp, sendOtp } from "@/services/auth";
-import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 
+import styles from "./CheckOtpModal.module.css";
+
 function CheckOtpModal() {
-  const { isOpen, step, mobile, redirectAfterLogin } = useSelector(
-    (state) => state.authModal,
-  );
+  const { isOpen, step, mobile } = useSelector((state) => state.authModal);
   const dispatch = useDispatch();
   const [otp, setOtp] = useState("");
-  const router = useRouter();
   const queryClient = useQueryClient();
 
   if (!isOpen || step !== "otp") return null;
@@ -42,7 +38,6 @@ function CheckOtpModal() {
       toast.success("کد جدید ارسال شد");
     } catch (er) {
       toast.error("ارسال کد با مشکل مواجه شد لطفا دوباره تلاش کنید.", {
-        position: "top-right",
       });
     }
   };

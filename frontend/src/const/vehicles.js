@@ -1,4 +1,3 @@
-// src/const/vehicles.js
 const vehicles = [
   { key: "airplane", label: "پرواز", icon: "/images/airplane.svg" },
   { key: "train", label: "قطار", icon: "/images/bus.svg" },

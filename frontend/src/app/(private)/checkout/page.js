@@ -1,5 +1,4 @@
 import CheckOutPage from "@/checkout/CheckOutPage";
-import React from "react";
 
 function page() {
   return (

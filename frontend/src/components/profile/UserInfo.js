@@ -7,6 +7,7 @@ import { digitsEnToFa } from "@persian-tools/persian-tools";
 import { emailSchema } from "@/validations/ProfileSchema";
 import { useUpdateProfile } from "@/hooks/useProfile";
 import { fromApi } from "@/utils/profileMapper";
+
 import styles from "./UserInfo.module.css";
 
 function UserInfo({ profile }) {

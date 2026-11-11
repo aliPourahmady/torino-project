@@ -14,7 +14,7 @@
     "title": "تور کردستان",
     "fleetVehicle": "bus",
     "price": 105000,
-    "availableSeats": 25,
+    "availableSeats": 24,
     "capacity": 30,
     "insurance": true,
     "options": [
@@ -39,7 +39,7 @@
     "title": "تور مادرید",
     "fleetVehicle": "ship",
     "price": 240000,
-    "availableSeats": 14,
+    "availableSeats": 13,
     "capacity": 150,
     "insurance": false,
     "options": [
@@ -63,7 +63,7 @@
     "title": "سلیمانیه",
     "fleetVehicle": "train",
     "price": 35000,
-    "availableSeats": 39,
+    "availableSeats": 38,
     "capacity": 50,
     "insurance": true,
     "options": [
@@ -87,7 +87,7 @@
     "title": "هولر",
     "fleetVehicle": "airplane",
     "price": 105000,
-    "availableSeats": 19,
+    "availableSeats": 18,
     "capacity": 30,
     "insurance": false,
     "options": [

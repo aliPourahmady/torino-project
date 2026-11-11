@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
-import { toast, Toaster } from "sonner";
+import { toast} from "sonner";
 
 import { useAddToBasket } from "@/hooks/useBasket";
 import { openModal } from "@/store/features/auth/authSlice";

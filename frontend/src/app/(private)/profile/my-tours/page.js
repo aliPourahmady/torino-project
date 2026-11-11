@@ -1,5 +1,4 @@
 import MyToursPage from "@/profile/MyToursPage";
-import React from "react";
 
 function myTours() {
   return (

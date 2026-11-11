@@ -1,74 +1,16 @@
 import Image from "next/image";
 import { digitsEnToFa } from "@persian-tools/persian-tools";
-
 import ReserveButton from "./ReserveButton";
-import { getLocationName } from "@/utils/cities";
-import {
-  formatDate,
-  formatPrice,
-  getTourDays,
-  getVehicleName,
-} from "@/utils/formater";
+import { formatPrice, getTourDays } from "@/utils/formater";
+import { perks, info } from "src/const/tourDetailData";
+
 import styles from "./TourDetail.module.css";
 
-const perks = [
-  { label: "تورلیدر از مبدا", icon: "/images/user-tick.svg" },
-  { label: "برنامه سفر", icon: "/images/map.svg" },
-  { label: "تضمین کیفیت", icon: "/images/medal-star.svg" },
-];
-
 function TourDetail({ tour }) {
-  const {
-    id,
-    title,
-    image,
-    price,
-    startDate,
-    endDate,
-    origin,
-    fleetVehicle,
-    capacity,
-    insurance,
-  } = tour;
+  const { id, title, image, price, startDate, endDate } = tour;
 
   const nights = getTourDays(startDate, endDate);
   const days = nights + 1;
-
-  const info = [
-    {
-      label: "مبدا",
-      value: getLocationName(origin),
-      icon: "/images/routing-2.svg",
-      desktopOnly: true,
-    },
-    {
-      label: "تاریخ رفت",
-      value: formatDate(startDate),
-      icon: "/images/calendar (3).svg",
-      desktopOnly: true,
-    },
-    {
-      label: "تاریخ برگشت",
-      value: formatDate(endDate),
-      icon: "/images/calendar-2.svg",
-      desktopOnly: true,
-    },
-    {
-      label: "حمل و نقل",
-      value: getVehicleName(fleetVehicle),
-      icon: "/images/bus.svg",
-    },
-    {
-      label: "ظرفیت",
-      value: `حداکثر ${digitsEnToFa(String(capacity))} نفر`,
-      icon: "/images/profile-2user.svg",
-    },
-    {
-      label: "بیمه",
-      value: insurance ? "بیمه ۵۰ هزار دیناری" : "ندارد",
-      icon: "/images/security.svg",
-    },
-  ];
 
   return (
     <div className={styles.page}>
@@ -123,7 +65,7 @@ function TourDetail({ tour }) {
                   <Image src={item.icon} width={20} height={20} alt="" />
                   {item.label}
                 </span>
-                <p>{item.value}</p>
+                <p>{item.getValue(tour)}</p>
               </li>
             ))}
           </ul>

@@ -8,8 +8,9 @@ import {
   getVehicleName,
   isTourFinished,
 } from "@/utils/formater";
-import styles from "./MyToursCard.module.css";
 import Badge from "@/ui/Badge";
+
+import styles from "./MyToursCard.module.css";
 
 function MyToursCard({ tour }) {
   const finished = isTourFinished(tour.endDate);

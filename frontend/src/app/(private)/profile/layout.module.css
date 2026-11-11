@@ -1,4 +1,4 @@
-.wrapper {
+.container {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -12,7 +12,7 @@
 }
 
 @media (min-width: 1024px) {
-  .wrapper {
+  .container {
     display: grid;
     grid-template-columns: 280px 1fr;
     align-items: start;

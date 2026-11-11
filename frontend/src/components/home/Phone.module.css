@@ -10,7 +10,7 @@
 .box {
   position: relative;
   display: flex;
-  align-items: center; /* NEW: the title sits in the vertical middle of the green box */
+  align-items: center;
   justify-content: flex-start;
   height: 128px;
   padding: 16px;
@@ -38,7 +38,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 60%; 
+  width: 60%;
   max-width: 195px;
   line-height: 0;
 }
@@ -58,6 +58,11 @@
   font-size: 22px;
   font-weight: 500;
   color: var(--text-color);
+}
+.phone span {
+  font-family: "Vazir";
+  font-weight: 700;
+  font-size: 20px;
 }
 .phone p img {
   margin-bottom: 8px;
