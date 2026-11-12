@@ -13,7 +13,7 @@ function DateField({ onChange, placeholder = "تاریخ" }) {
   const handleChange = (e) => {
     const next = { from: e.from ?? null, to: e.to ?? null };
     setValue(next);
-    onChange?.(next);
+    onChange(next);
 
     if (next.from && next.to) setPickerKey((k) => k + 1);
   };
@@ -22,8 +22,7 @@ function DateField({ onChange, placeholder = "تاریخ" }) {
     const empty = { from: null, to: null };
     setValue(empty);
     setPickerKey((k) => k + 1);
-     // remount -> empty input
-    onChange?.(empty);
+    onChange(empty);
   };
 
   return (
