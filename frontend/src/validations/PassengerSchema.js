@@ -9,7 +9,7 @@ const passengerSchema = yup.object({
   nationalCode: yup
     .string()
     .transform((value) => digitsFaToEn(value ?? ""))
-    .required("کد ملی را وارد کنید")
+    .required("کد ملی خود را وارد کنید")
     .test("valid", "کد ملی معتبر نیست", (value) =>
       verifyIranianNationalId(value),
     ),

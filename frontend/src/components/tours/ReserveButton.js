@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
-import { toast} from "sonner";
+import { toast } from "sonner";
 
 import { useAddToBasket } from "@/hooks/useBasket";
 import { openModal } from "@/store/features/auth/authSlice";
@@ -15,14 +15,12 @@ function ReserveButton({ tourId, className }) {
     mutate(tourId, {
       onSuccess: () => router.push("/checkout"),
       onError: (error) => {
-        const status = error.response?.status;
-        if (status === 401 || status === 403) {
+        if (error.status === 401 || error.status === 403) {
           dispatch(openModal({ redirectTo: `/tours/${tourId}` }));
           toast.error("لطفا برای خرید و رزرو به حساب خود وارد شوید");
         } else {
           toast.error(
-            error.response?.data?.message ??
-              "افزودن تور به سبد خرید با مشکل مواجه شد.",
+            error.message ?? "افزودن تور به سبد خرید با مشکل مواجه شد.",
           );
         }
       },

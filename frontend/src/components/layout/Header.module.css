@@ -63,11 +63,6 @@
   padding: 12px 0;
   margin: -12px 0;
 }
-.skeletonbox {
-  display: block;
-  width: 130px;
-  height: 48px;
-}
 @media (min-width: 1024px) {
   .container {
     margin: 0 clamp(24px, 8vw, 126px);

@@ -159,7 +159,7 @@
     "title": "تور ایتالیا",
     "fleetVehicle": "airplane",
     "price": 18000,
-    "availableSeats": 20,
+    "availableSeats": 19,
     "capacity": 200,
     "insurance": true,
     "options": [

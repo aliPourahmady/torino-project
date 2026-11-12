@@ -38,7 +38,11 @@ api.interceptors.response.use(
         deleteCookie("refreshToken");
       }
     }
-    return Promise.reject(error.response?.data);
+    return Promise.reject({
+      message: error.response?.data?.message ?? error.message,
+      status: error.response?.status,
+      data: error.response?.data,
+    });
   },
 );
 

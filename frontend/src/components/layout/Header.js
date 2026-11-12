@@ -51,8 +51,10 @@ function Header() {
         </div>
 
         {isLoading ? (
-          <div>
-            <Skeleton height="100%" containerClassName={styles.skeletonbox} />
+          <div className={styles.hover}>
+            <div className={styles.user}>
+              <Skeleton width={140} height={38} borderRadius={6} />
+            </div>
           </div>
         ) : profile?.mobile ? (
           <div
